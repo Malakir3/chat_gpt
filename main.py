@@ -1,5 +1,6 @@
-import os
 import openai
+import os
+import sys
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 max_tokens_num = 100
@@ -29,9 +30,7 @@ response = openai.ChatCompletion.create(
 
 print("\n[回答]: ", end="")
 
-# collected_chunks = []
-
 for chunk in response:
-    # collected_chunks.append(chunk)  # save the event response
     chunk_message = chunk["choices"][0]["delta"]
-    print(chunk_message.get("content", ""), end="")
+    sys.stdout.write(chunk_message.get("content", ""))
+    sys.stdout.flush()
