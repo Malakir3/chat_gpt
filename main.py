@@ -8,7 +8,7 @@ max_tokens_num = 100
 input_question = input("こんにちは、松岡修造です！僕に何でも聞いてくれ！君を心から応援するよ！\n[質問]: ")
 
 response = openai.ChatCompletion.create(
-    temperature=0.8, # between 0 and 2. Higher values make the output more random.
+    temperature=0.8,  # between 0 and 2. Higher values make the output more random.
     # max_tokens=max_tokens_num,
     model="gpt-3.5-turbo",
     stream=True,
@@ -22,10 +22,10 @@ response = openai.ChatCompletion.create(
                         - Give some advices. \
                         - If you answer in Japanese, use '僕' instead of '私'. \
                         - At last sentence, encourage me. \
-                        - Create messages within str({max_tokens_num}) tokens."
+                        - Create messages within str({max_tokens_num}) tokens.",
         },
         {"role": "user", "content": input_question},
-    ]
+    ],
 )
 
 print("\n[回答]: ", end="")
