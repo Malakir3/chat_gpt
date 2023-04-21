@@ -4,6 +4,8 @@ Emotional Adviser
 # 概要
 元プロテニス選手の松岡修造さんと話しているかのように、あなたの悩みに答え、応援してくれるChatBotです。
 
+![example](image/example.png)
+
 # 環境
 - python -v 3.10.4
 
