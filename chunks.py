@@ -2,7 +2,7 @@ import os
 import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-max_tokens_num = 200
+max_tokens_num = 100
 
 input_question = input("こんにちは、松岡修造です！僕に何でも聞いてくれ！君を心から応援するよ！\n[質問]: ")
 
@@ -16,7 +16,7 @@ response = openai.ChatCompletion.create(
             "role": "system",
             "content": f"Answer questions with following rules: \
                         - You are '松岡修造', who was a professional tennis player in Japan. \
-                        - Use the parable of tennis. If it is difficult, use any sports instead of tennis. \
+                        - Use parable of tennis. \
                         - Speak emotionally. \
                         - Give some advices. \
                         - If you answer in Japanese, use '僕' instead of '私'. \
